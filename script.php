@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($counter == $stop) {
         $str .= $v;
       } else {
-        $str .= $v . " ";
+        $str .= $v . ", ";
       }
     }
     return $str;
@@ -48,6 +48,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     "software" => strval($softWareArr)
   ];
 
+  $empType = $_POST["empType"][0];
+  $empName = $_POST["employeeName"];
+  $dept = $_POST["department"];
+  $action = $_POST["actionDate"];
+  $drives = $_POST["networkDrives"];
+  $printers = $_POST["networkPrinters"];
+  $tech = $techArr;
+  $email = $emailArr;
+  $software = $softWareArr;
+
   define("HOSTNAME", "localhost");
   define("USERNAME", "root");
   define("PASSWORD", "");
@@ -60,13 +70,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
 
-  $query = "INSERT INTO `emp` (employeeType, employeeName, department, actionDate, drives, printers, techType, email, software) VALUES ('TYPE', 'Name', 'dept', 'TEST', 'drives', 'printers', 'techtype', 'email', 'software' )";
-  // $query = "INSERT INTO `requests` (emp_type, emp_name, dept, action_date, email_accounts, computer_type, webcam, direct_number, phone_programming, network_drives, network_printers, software) VALUES ('TES', 'er', 'wew', 'op', 'op', 'uui', 'uiu', 'klk', 'l;l', 'opo', 'opo', 'op' )";
+  $query = "INSERT INTO `emp` (employeeType, employeeName, department, actionDate, drives, printers, techType, email, software) VALUES ('$empType', '$empName', '$dept', '$action', '$drives', '$printers', '$tech', '$email', '$software' )";
+
 
   $result = mysqli_query($con, $query);
   if (!$result) {
     die("FAILED" . mysqli_error($con));
-  } 
+  }  else {
+    header("location: success.php");
+  }
 
   // $newRequest = [
   //   "employeeType" => $_POST["empType"][0],
@@ -85,24 +97,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
   // CHECK TO SEE IF ITS THE FIRST MESSAGE
-  if (filesize("request.json") == 0) {
-    // FIRST MSG ---> Create array in JSON file
-    // ONLY NEEDED TO CREATE AN ARRAY TO STORE IN JSON
-    $first_request = array($newRequest);
-    $data_to_save = $first_request;
-  } else {
-    // PULL OLD MESSAGES
-    $old_records = json_decode(file_get_contents("request.json"));
-    array_push($old_records, $newRequest);
-    $data_to_save = $old_records;
-  }
+  // if (filesize("request.json") == 0) {
+  //   $first_request = array($newRequest);
+  //   $data_to_save = $first_request;
+  // } else {
+  //   $old_records = json_decode(file_get_contents("request.json"));
+  //   array_push($old_records, $newRequest);
+  //   $data_to_save = $old_records;
+  // }
 
-  if (!file_put_contents("request.json", json_encode($data_to_save, JSON_PRETTY_PRINT, LOCK_EX))) {
-    echo "BAD";
-  } else {
-    // SAVE TO DATA BASE============
-    header("location: success.php");
-  }
+  // if (!file_put_contents("request.json", json_encode($data_to_save, JSON_PRETTY_PRINT, LOCK_EX))) {
+  //   echo "BAD";
+  // } else {
+
+  //   header("location: success.php");
+  // }
 
 
 
