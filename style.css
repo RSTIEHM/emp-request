@@ -1,0 +1,295 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  /* background-color: blanchedalmond; */
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.btn {
+  width: 90px;
+  height: 40px;
+  background-color: none;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-next {
+  background-color: rgb(16, 105, 222);
+  color: #fff;
+}
+
+.loading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  color: #fff;
+  z-index: 1;
+  width: 100%;
+  opacity: .9;
+}
+
+.loading-img {
+  width: 200px;
+}
+
+#flex-auto-wrap {
+  /* grid-auto-columns: fit-content(400px); */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  width: 100%;
+}
+
+.input-text-contatiner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-text {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  padding-left: 10px;
+}
+
+.left-50,
+.right-50 {
+  width: 47%;
+
+}
+
+.left-50 {
+  /* padding-left: 30px; */
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CUSTOM STYLES */
+.nav-container {
+  width: 100%;
+  height: 100px;
+  background-color: #f7f7f765;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+.form-container {
+  width: 80%;
+  margin: 0 auto;
+  /* border: 1px solid black; */
+  padding: 2rem;
+  height: 65vh;
+  margin-top: 65px;
+}
+
+.form-wrapper {
+  width: 100%;
+  /* border: 1px solid black; */
+  height: 100%;
+}
+
+.emp-request-title {
+  font-size: 25px;
+  background-color: rgb(224, 158, 15);
+  width: 400px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.page-1 {
+  display: block;
+}
+
+.page-2 {
+  display: none;
+}
+
+.page-1-next,
+.page-2-next {
+  transition: all ease 500ms;
+  margin-top: 15px;
+  opacity: 1;
+}
+
+.page-1-next:hover,
+.page-2-next:hover {
+  opacity: .9;
+}
+
+
+
+.form-page {
+  border: 1px solid rgba(0, 0, 0, 0.108);
+  padding: 1rem 0 1.5rem 30px;
+  background-color: #6eb2d72c;
+  box-shadow: 10px 5px 5px rgba(74, 74, 74, 0.098);
+
+  margin: 0 auto;
+  /* border-radius: 5px; */
+}
+
+.employee-status-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.email-status-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.employee-status-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px
+}
+
+input.employee-type,
+input.email-type {
+  width: 30px;
+  height: 30px;
+}
+
+input.computer-type {
+  width: 30px;
+  height: 30px;
+}
+
+.employee-label {
+  font-weight: bold;
+}
+
+.tech-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 220px);
+  width: 100%;
+}
+
+.software-container {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 25px;
+  grid-template-columns: repeat(auto-fill, 275px);
+  width: 100%;
+}
+
+.software-label {
+  font-weight: 600;
+  color: black;
+}
+
+.tech-title {
+  font-size: 1.2rem;
+}
+
+.software-title {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.tech-item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 5px;
+}
