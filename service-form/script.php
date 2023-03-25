@@ -77,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!$result) {
     die("FAILED" . mysqli_error($con));
   }  else {
-    header("location: success.php");
+    header("location: http://localhost/emp-json/");
   }
 
   // $newRequest = [

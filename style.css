@@ -69,6 +69,31 @@ h6 {
   overflow-wrap: break-word;
 }
 
+th {
+  text-align: left;
+  margin-left: 10px;
+}
+
+td {
+padding-left: 5px;
+}
+
+.tr-dark {
+  background-color: #93bc3b;
+  color: #fff;
+}
+
+.tr-dark th {
+  margin-left: 10px;
+  padding-left: 5px;
+}
+
+
+
+.single-table-row:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
 /*
   9. Create a root stacking context
 */
@@ -89,9 +114,16 @@ h6 {
 }
 
 .btn-next {
-  background-color: rgb(16, 105, 222);
+  background-color: #93bc3b;
   color: #fff;
+  transition: all 0.3s ease;
 }
+
+.btn-next:hover {
+  background-color: #dba718;
+}
+
+
 
 .loading {
   display: none;
@@ -112,7 +144,32 @@ h6 {
 .loading-img {
   width: 200px;
 }
+.table-flex {
+  margin: 0 auto;
+  width: 95%;
+}
+table {
+  width: 100%;
+}
 
+a.view-more {
+  background-color: #93bc3b;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 5px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+a.view-more:hover {
+  background-color: #dba718;
+}
 #flex-auto-wrap {
   /* grid-auto-columns: fit-content(400px); */
   display: grid;
@@ -194,7 +251,7 @@ h6 {
 
 .emp-request-title {
   font-size: 25px;
-  background-color: rgb(224, 158, 15);
+  background-color: #93bc3b;
   width: 400px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
