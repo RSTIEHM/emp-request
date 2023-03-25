@@ -12,5 +12,5 @@
 
 <body>
   <nav class="nav-container">
-    LOGO
+    <img class="nav-logo" src="<?php echo $approot; ?>/logo.png" alt="">
   </nav>

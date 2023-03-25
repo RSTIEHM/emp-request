@@ -85,19 +85,19 @@
         <p class="employee-label">Email Accounts</p>
         <div class="flex-container-left mb-10">
           <div class="employee-status-type">
-            <input id="new-employee" name="email[]" value="SIGEmail" class="email-type page-1-empInfo" type="checkbox">
+            <input id="new-employee" name="email[]" value="SIG" class="email-type page-1-empInfo" type="checkbox">
             <label class="employee-label" for="new-employee">SIG</label>
           </div>
           <div class="employee-status-type">
-            <input class="email-type page-1-empInfo" value="AAEmail" data-id="AAEmail" id="employee-transfer" name="email[]" type="checkbox">
+            <input class="email-type page-1-empInfo" value="AA" data-id="AAEmail" id="employee-transfer" name="email[]" type="checkbox">
             <label class="employee-label" for="employee-transfer">AA</label>
           </div>
           <div class="employee-status-type">
-            <input id="employee-separation" name="email[]" value="SISEmail" class="email-type page-1-empInfo" data-id="SISEmail" type="checkbox">
+            <input id="employee-separation" name="email[]" value="SIS" class="email-type page-1-empInfo" data-id="SISEmail" type="checkbox">
             <label class="employee-label" for="employee-separation">SIS</label>
           </div>
           <div class="employee-status-type">
-            <input id="employee-separation" name="email[]" value="SFGEmail" class="email-type page-1-empInfo" data-id="SFGEmail" type="checkbox">
+            <input id="employee-separation" name="email[]" value="SFG" class="email-type page-1-empInfo" data-id="SFGEmail" type="checkbox">
             <label class="employee-label" for="employee-separation">SFG</label>
           </div>
           <div class="employee-status-type">
