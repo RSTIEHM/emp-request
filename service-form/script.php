@@ -1,8 +1,10 @@
-<?php 
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+<?php
 
-  function addToArray($arr) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  function addToArray($arr)
+  {
     $str = "";
     $stop = count($arr);
     $counter = 0;
@@ -17,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     return $str;
   }
 
-  if(isset($_POST["techType"])) {
+  if (isset($_POST["techType"])) {
     $techArr = addToArray($_POST["techType"]);
   } else {
     $techArr = "";
@@ -33,21 +35,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $softWareArr = "";
   }
 
-
-
-
-  $newRequest = [
-    "employeeType" => $_POST["empType"][0],
-    "employeeName" => strval($_POST["employeeName"]),
-    "department" => strval($_POST["department"]),
-    "actionDate" => strval($_POST["actionDate"]),
-    "drives" => strval($_POST["networkDrives"]),
-    "printers" => strval($_POST["networkPrinters"]),
-    "techType" => strval($techArr),
-    "email" => strval($emailArr),
-    "software" => strval($softWareArr)
-  ];
-
   $empType = $_POST["empType"][0];
   $empName = $_POST["employeeName"];
   $dept = $_POST["department"];
@@ -58,12 +45,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $emailArr;
   $software = $softWareArr;
 
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "employee-request";
+
   define("HOSTNAME", "localhost");
   define("USERNAME", "root");
   define("PASSWORD", "");
   define("DATABASE", "employee-request");
 
-  $con = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DATABASE);
+  $con = mysqli_connect("localhost", "root", "", "employee-request");
 
   if (!$con) {
     die("Connection Failed!!!");
@@ -76,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = mysqli_query($con, $query);
   if (!$result) {
     die("FAILED" . mysqli_error($con));
-  }  else {
+  } else {
     header("location: http://localhost/emp-json/");
   }
 
@@ -92,7 +84,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   //   "software" => strval($softWareArr)
   // ];
 
-
+  // $newRequest = [
+  //   "employeeType" => $_POST["empType"][0],
+  //   "employeeName" => strval($_POST["employeeName"]),
+  //   "department" => strval($_POST["department"]),
+  //   "actionDate" => strval($_POST["actionDate"]),
+  //   "drives" => strval($_POST["networkDrives"]),
+  //   "printers" => strval($_POST["networkPrinters"]),
+  //   "techType" => strval($techArr),
+  //   "email" => strval($emailArr),
+  //   "software" => strval($softWareArr)
+  // ];
 
 
 

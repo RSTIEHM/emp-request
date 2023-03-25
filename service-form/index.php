@@ -8,7 +8,10 @@
     <form action="script.php" method="POST">
       <h1 class="emp-request-title">Employee Service Request</h1>
       <div class="border-container">
+        <br>
+        <label class="employee-label" for="">Employee Type</label>
         <div class="employee-status-container">
+
           <div class="employee-status-type">
             <input class="employee-type emp-radio" value="new" type="radio" name="empType[]" id="">
             <label class="employee-label" for="">New</label>
@@ -33,7 +36,7 @@
           </div>
           <div class="input-text-contatiner mb-10">
             <label class="employee-label" for="">Action Date</label>
-            <input value="2023-01-23" name="actionDate" required data-id="ActionDate" class="input-text page-1-empInfo" type="date">
+            <input value="2023-01-01" name="actionDate" required data-id="ActionDate" class="input-text page-1-empInfo" type="date">
           </div>
         </div>
 
@@ -85,24 +88,24 @@
         <p class="employee-label">Email Accounts</p>
         <div class="flex-container-left mb-10">
           <div class="employee-status-type">
-            <input id="new-employee" name="email[]" value="SIG" class="email-type page-1-empInfo" type="checkbox">
-            <label class="employee-label" for="new-employee">SIG</label>
+            <input id="sig" name="email[]" value="SIG" class="email-type page-1-empInfo" type="checkbox">
+            <label for="sig">SIG</label>
           </div>
           <div class="employee-status-type">
-            <input class="email-type page-1-empInfo" value="AA" data-id="AAEmail" id="employee-transfer" name="email[]" type="checkbox">
-            <label class="employee-label" for="employee-transfer">AA</label>
+            <input class="email-type page-1-empInfo" value="AA" data-id="AAEmail" id="aa" name="email[]" type="checkbox">
+            <label for="aa">AA</label>
           </div>
           <div class="employee-status-type">
-            <input id="employee-separation" name="email[]" value="SIS" class="email-type page-1-empInfo" data-id="SISEmail" type="checkbox">
-            <label class="employee-label" for="employee-separation">SIS</label>
+            <input id="sis" name="email[]" value="SIS" class="email-type page-1-empInfo" data-id="SISEmail" type="checkbox">
+            <label for="sis">SIS</label>
           </div>
           <div class="employee-status-type">
-            <input id="employee-separation" name="email[]" value="SFG" class="email-type page-1-empInfo" data-id="SFGEmail" type="checkbox">
-            <label class="employee-label" for="employee-separation">SFG</label>
+            <input id="sfg" name="email[]" value="SFG" class="email-type page-1-empInfo" data-id="SFGEmail" type="checkbox">
+            <label for="sfg">SFG</label>
           </div>
           <div class="employee-status-type">
-            <input id="employee-separation" name="email[]" value="AddtionalEmail" class="email-type page-1-empInfo" data-id="AdditionalEmail" type="checkbox">
-            <label class="employee-label" for="employee-separation">Addtional Mailboxes</label>
+            <input id="addmail" name="email[]" value="AddtionalEmail" class="email-type page-1-empInfo" data-id="AdditionalEmail" type="checkbox">
+            <label for="addmail">Addtional Mailboxes</label>
           </div>
         </div>
         <p class="employee-label mb-10">Software</p>
@@ -152,8 +155,8 @@
     programs.forEach((program) => {
       html += `
       <div class="tech-item">
-        <input value="${program}" name="software[]" data-id="${program}" class="computer-type page-2-empInfo" type="checkbox">
-        <label class="software-label" for="">${program}</label>
+        <input id=${program} value="${program}" name="software[]" data-id="${program}" class="computer-type page-2-empInfo" type="checkbox">
+        <label for="${program}">${program}</label>
       </div>
     `;
     });
